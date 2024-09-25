@@ -1,0 +1,45 @@
+<form>
+  <label >Name:</label>
+  <input name="name" class="input-text" id="name">
+  <br>
+
+  <label >Age</label>
+  <input class="input-number" name="age"></input>
+
+  <br>
+
+  <label>Country</label>
+  <input name="country" class="input-number"></input>
+
+
+  <script>
+    // Lấy tất cả các input trong form
+      const byId = document.getElementById('name');
+      const byClassname = document.getElementsByClassName('input-number');
+      const Byname = document.getElementsByName('age','name')
+      const tagName = document.getElementsByTagName('name')
+
+      // Truy cập giá trị của các input
+      console.log(byId); // Giá trị của input có name="name"
+      console.log(byClassname); // Giá trị của input có name="age"
+      console.log(Byname); // Giá trị của input có name="country"
+      console.log(tagName); // Giá trị của input có name="country"
+  </script>
+</form>
+
+
+// A Phương thức này chỉ lấy ra một phần tử có ID duy nhất. 
+// Trong trường hợp này, các input không có ID nên phương thức này không phù hợp.
+
+// B Phương thức này lấy ra tất cả các phần tử có class name cho trước. 
+// Trong trường hợp này, có thể lấy được tất cả các input vì chúng đều có class input-number. 
+// Tuy nhiên, nếu sau này có thêm các phần tử khác cùng class này thì kết quả trả về sẽ bao gồm cả các phần tử đó, 
+// dẫn đến kết quả không chính xác.
+
+// C Phương thức này lấy ra tất cả các phần tử có thuộc tính name cho trước. 
+// Trong trường hợp này, mỗi input có một name duy nhất, nên khi sử dụng phương thức này, 
+// ta sẽ lấy được chính xác các input cần tìm.
+
+// D Phương thức này lấy ra tất cả các phần tử có thẻ cho trước. 
+// Nếu sử dụng phương thức này với tag input, ta sẽ lấy được tất cả các input trong trang, 
+// kể cả những input không nằm trong form này, dẫn đến kết quả không chính xác.

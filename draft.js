@@ -1,14 +1,3 @@
-console.log("Start")
-
-function log(message){
-    console.log(message)
-}
-
-for (let i = 0; i < 3; i++) {
-    setTimeout(() => {
-        console.log(`TimeOut ${i}`)
-    }, 0)
-    log(`Message ${i}`)
-}
-
-console.log("End")
+const a = { num: 0, valueOf: () => this.num++ };
+console.log(a == 1); // true
+console.log(a === 1); // false (vì a là một đối tượng, 1 là một số)
